@@ -3,5 +3,14 @@ type APIProject = {
   nom: string
   description: string
   commentaire: string
-  etape: string
+  etape: Etape
 }
+
+type Project = {
+  id: number
+  nom: string
+  description: string
+  etape: Etape
+}
+
+type Etape = "En cours" | "En attente" | "Terminé"
