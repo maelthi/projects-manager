@@ -3,13 +3,13 @@ import { API_BASE_URL } from "../constants/utils"
 import { mapProjects } from "../mappers/projectsMappers/mappers"
 
 export const useGetProjects = () => {
-  const { isLoading, data, isError } = useQuery(
+  const { isLoading, data, isError, refetch } = useQuery(
     ["projects"],
     () => fetch(`${API_BASE_URL}projects`).then((res) => res.json()),
     { refetchOnWindowFocus: false, staleTime: 50000 }
   )
 
-  return { isLoading, data: mapProjects(data), isError }
+  return { isLoading, data: mapProjects(data), isError, refetch }
 }
 
 export const useGetProjectById = (projectId: string | undefined) => {
