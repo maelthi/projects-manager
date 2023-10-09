@@ -4,11 +4,25 @@ import { useGetProjects } from "../../hooks/useGetProjects"
 import arrow from "../../assets/arrow.svg"
 import remove from "../../assets/remove.svg"
 import { useNavigate } from "react-router-dom"
+import { useDeleteProjectById } from "../../hooks/useDeleteProject"
 
 export const ProjectsTableContainer = () => {
-  const { data: projectsList } = useGetProjects()
+  const { data: projectsList, refetch: refetchProjects } = useGetProjects()
   const headers = ["Titre du projet", "Description", "Etape"]
   const navigate = useNavigate()
+
+  const { mutate } = useDeleteProjectById()
+
+  const handleOnDeleteProject = (projectId: number) => {
+    mutate(projectId, {
+      onSuccess: () => {
+        refetchProjects()
+      },
+      onError: () => {
+        throw new Error("Error during project deletion")
+      },
+    })
+  }
 
   const handleOnNavigateButtonClick = (id: number) =>
     navigate(`/projects/${id}`)
@@ -35,23 +49,31 @@ export const ProjectsTableContainer = () => {
       {
         id: `row-${id}-col-4`,
         content: (
-          <img
-            className="cursor-pointer"
-            src={remove}
-            alt={`This icon removes the ${nom} project`}
+          <button
+            onClick={() => handleOnDeleteProject(id)}
             aria-label={`Remove the ${nom} project`}
-          />
+          >
+            <img
+              className="cursor-pointer"
+              src={remove}
+              alt={`This icon removes the ${nom} project`}
+              data-testid="remove-project-button"
+            />
+          </button>
         ),
       },
       {
         id: `row-${id}-col-5`,
         content: (
-          <button onClick={() => handleOnNavigateButtonClick(id)}>
+          <button
+            onClick={() => handleOnNavigateButtonClick(id)}
+            aria-label={`Navigate to the ${nom} project`}
+            data-testid="navigate-button"
+          >
             <img
               className="cursor-pointer"
               src={arrow}
               alt={`This icon navigates you to the ${nom} project`}
-              aria-label={`Navigate to the ${nom} project`}
             />
           </button>
         ),
