@@ -7,7 +7,6 @@ type Table = {
 }
 
 export const Table = ({ headers, rows }: Table) => {
-  console.log("rows:", rows)
   return (
     <section className="flex flex-col">
       <table className="min-w-full">
