@@ -3,7 +3,6 @@ type TableBody = {
 }
 
 export const TableBody = ({ rows }: TableBody) => {
-  console.log("rows:", rows)
   return rows?.map(({ id: rowId, cols }) => (
     <tbody>
       <tr key={`row-${rowId}`} className="bg-gray-100 border-b">
