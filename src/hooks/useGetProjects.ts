@@ -18,15 +18,19 @@ export const useGetProjectById = (projectId: string | undefined) => {
   return { isLoading, data, isError }
 }
 
-export const useGetProjectsByEtape = (etape: string) => {
+export const useGetProjectsByEtape = (etape: string, query: string = "") => {
   let queryString = ""
 
-  if (etape !== "") {
+  if (etape !== "" && query === "") {
     queryString = `?etape=${etape}`
   }
 
+  if (query !== "") {
+    queryString = `?q=${query}`
+  }
+
   const { isLoading, data, isError, refetch } = useQuery(
-    ["projects", etape],
+    ["projects", etape, query],
     () =>
       fetch(`${API_BASE_URL}projects${queryString}`).then((res) => res.json()),
     { refetchOnWindowFocus: false }
