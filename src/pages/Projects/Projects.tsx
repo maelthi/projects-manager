@@ -10,8 +10,16 @@ export const Projects = () => {
   return (
     <section>
       <Heading label="Projects" />
-      <Button label="Add project" onClick={handleAddProjectButtonClick} />
-      {showAddProjectModal ? <AddProjectContainer /> : null}
+      <Button
+        className="bg-blue-500"
+        label="Add project"
+        onClick={handleAddProjectButtonClick}
+      />
+      {showAddProjectModal ? (
+        <AddProjectContainer
+          onSetShowAddProjectModal={setShowAddProjectModal}
+        />
+      ) : null}
       <ProjectsTableContainer />
     </section>
   )

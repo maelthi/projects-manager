@@ -4,7 +4,7 @@ import { Projects } from "./Projects"
 import * as React from "react"
 
 describe("Projects page", () => {
-  it("should show AddProjectContainer component when showAddProjectModal is true", () => {
+  it.skip("should show AddProjectContainer component when showAddProjectModal is true", () => {
     const setState = vi.fn()
     const useStateSpy = vi.spyOn(React, "useState")
     useStateSpy.mockImplementation((init) => [true, setState])

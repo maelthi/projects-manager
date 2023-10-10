@@ -3,14 +3,24 @@ type APIProject = {
   nom: string
   description: string
   commentaire: string
-  etape: Etape
+  etape: ETAPE
 }
 
 type Project = {
   id: number
   nom: string
   description: string
-  etape: Etape
+  etape: ETAPE
 }
 
-type Etape = "En cours" | "En attente" | "Terminé"
+enum ETAPE {
+  EN_COURS = "En cours",
+  EN_ATTENTE = "En attente",
+  TERMINE = "Terminé",
+}
+
+type ProjectToPost = {
+  nom: string
+  description: string
+  etape: ETAPE | ""
+}
