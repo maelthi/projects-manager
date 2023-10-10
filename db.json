@@ -10,7 +10,7 @@
     {
       "nom": "Stereo",
       "description": "Super project",
-      "etape": "Termine",
+      "etape": "Terminé",
       "id": 3
     },
     {
@@ -18,12 +18,6 @@
       "description": "A description of the project",
       "etape": "En attente",
       "id": 4
-    },
-    {
-      "nom": "Super project",
-      "description": "",
-      "etape": "En cours",
-      "id": 5
     }
   ]
 }
