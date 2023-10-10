@@ -2,7 +2,7 @@ import "./App.css"
 import { Home } from "./pages/Home/Home"
 import { Layout } from "./Layout"
 import { Route, Routes } from "react-router-dom"
-import { Projects } from "./pages/Projects/Projets"
+import { Projects } from "./pages/Projects/Projects"
 import { ProjectDetails } from "./pages/ProjectDetails/ProjectDetails"
 
 // TODOOO : FAIRE DU LAZYLOAD
