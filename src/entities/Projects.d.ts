@@ -13,12 +13,6 @@ type Project = {
   etape: ETAPE
 }
 
-enum ETAPE {
-  EN_COURS = "En cours",
-  EN_ATTENTE = "En attente",
-  TERMINE = "Terminé",
-}
-
 type ProjectToPost = {
   nom: string
   description: string

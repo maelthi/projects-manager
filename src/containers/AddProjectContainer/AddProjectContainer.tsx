@@ -2,7 +2,9 @@ import { useState } from "react"
 import { Modal } from "../../components/Modal/Modal"
 import { Button } from "../../components/Button/Button"
 import { usePostNewProject } from "../../hooks/usePostProject"
-import { useGetProjects } from "../../hooks/useGetProjects"
+import { useGetProjectsByEtape } from "../../hooks/useGetProjects"
+import { ETAPE } from "../../constants/project"
+import { useAppSelector } from "../../redux/hooks/useRedux"
 
 type AddProjectContainer = {
   onSetShowAddProjectModal: (bool: boolean) => void
@@ -11,13 +13,14 @@ type AddProjectContainer = {
 export const AddProjectContainer = ({
   onSetShowAddProjectModal,
 }: AddProjectContainer) => {
+  const filter = useAppSelector(({ filter }) => filter.filter)
   const [project, setProject] = useState<ProjectToPost>({
     nom: "",
     description: "",
     etape: "",
   })
 
-  const { refetch: refetchProjects } = useGetProjects()
+  const { refetch: refetchProjects } = useGetProjectsByEtape(filter)
 
   const { mutate } = usePostNewProject()
 

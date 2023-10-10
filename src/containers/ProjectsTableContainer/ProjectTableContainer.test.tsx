@@ -6,6 +6,7 @@ import * as useGetProjects from "../../hooks/useGetProjects"
 
 import { describe, it, expect, vi, beforeEach } from "vitest"
 import { cleanup, fireEvent } from "@testing-library/react"
+import { ETAPE } from "../../constants/project"
 
 const navigate = vi.fn()
 
@@ -14,7 +15,7 @@ describe("ProjectTableContainer", () => {
     cleanup()
   })
 
-  vi.spyOn(useGetProjects, "useGetProjects").mockReturnValue({
+  vi.spyOn(useGetProjects, "useGetProjectsByEtape").mockReturnValue({
     data: [
       {
         id: 2,

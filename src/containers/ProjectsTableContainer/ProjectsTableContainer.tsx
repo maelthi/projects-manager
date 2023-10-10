@@ -1,13 +1,16 @@
 import { Table } from "../../components/Table/Table"
-import { useGetProjects } from "../../hooks/useGetProjects"
+import { useGetProjectsByEtape } from "../../hooks/useGetProjects"
 
 import arrow from "../../assets/arrow.svg"
 import remove from "../../assets/remove.svg"
 import { useNavigate } from "react-router-dom"
 import { useDeleteProjectById } from "../../hooks/useDeleteProject"
+import { useAppSelector } from "../../redux/hooks/useRedux"
 
 export const ProjectsTableContainer = () => {
-  const { data: projectsList, refetch: refetchProjects } = useGetProjects()
+  const filter = useAppSelector(({ filter }) => filter.filter)
+  const { data: projectsList, refetch: refetchProjects } =
+    useGetProjectsByEtape(filter)
   const headers = ["Titre du projet", "Description", "Etape"]
   const navigate = useNavigate()
 
