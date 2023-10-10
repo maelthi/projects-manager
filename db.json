@@ -5,18 +5,18 @@
       "nom": " projet 200",
       "description": "description 2",
       "commentaire": " ceci est un commentaire 2 de test",
-      "etape": "En cours"
+      "etape": "Terminé"
     },
     {
       "nom": "Stereo",
       "description": "Super project",
-      "etape": "Terminé",
+      "etape": "En attente",
       "id": 3
     },
     {
       "nom": "New project",
       "description": "A description of the project",
-      "etape": "En attente",
+      "etape": "En cours",
       "id": 4
     }
   ]

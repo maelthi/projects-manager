@@ -1,31 +1,59 @@
-# React + TypeScript + Vite
+# Projects Manager
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+**Projects manager** is a Single Page Application aiming to give informations about current projects.
 
-Currently, two official plugins are available:
+It is made with ReactJs and Typescript. The development server is ViteJS.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## How to install
 
-## Expanding the ESLint configuration
+If you need to install the project, go to the Maël-Thi [Github](https://github.com/maelthi/projects-manager) and clone the project in one of your folder :
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
-
-- Configure the top-level `parserOptions` property like this:
-
-```js
-   parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-   },
+```
+git clone https://github.com/maelthi/projects-manager.git
 ```
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+Then, install the packages and dependencies :
 
-* observations :
+```
+npm i
+```
 
-- Demande d'être créatif (Bonus créativité) mais d'utiliser un framework de design
+Start the dev server :
+
+```
+npm run dev
+```
+
+Start the back-end server :
+
+```
+npm run db
+```
+
+If you need to run unit tests :
+
+```
+npm run test nameOfTheFile.tsx
+```
+
+If you still have questions, please contact the Technical leader and front-end developer of the project, Maël-Thi at mseme@hotmail.fr
+
+## Improvements
+
+- lazyload des routes
+- loader lors des chargements
+- messages quand pas de projets, pas de description ou de commentaires sur la page des projets
+- utilisation d'un textarea dans la modale pour la description
+- utilisation des getByRole dans les TU
+- inputs réutilisables, composants plus génériques
+- Mettre le nom du projet dans le title et dans l'url sous la forme d'un slug
+- tests automatisés
+- ajout d'alerte lorsque l'utilisateur fait des actions comme supprimer le projet, changer l'étape du projet
+- pas eu le temps de faire certains tests unitaires
+- problème d'appel en trop quand on ouvre la modale
+- le tableau disparait lorsque la modale est ouverte
+- le projet ne build pas à cause de tests qu'il faudrait creuser
+- il y a des scintillements bizarres au niveau des noms des colonnes lorsqu'on fait une recherche, cela ne devrait pas arriver
+- investiguer pourquoi le db.json est commité
+
+Temps de dev: 7h

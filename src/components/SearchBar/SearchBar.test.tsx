@@ -1,6 +1,5 @@
 import { describe, expect, it, vi, beforeEach } from "vitest"
 import { render } from "../../helpers/helpers"
-import { Filter } from "./Filter"
 import { fireEvent } from "@testing-library/dom"
 import { cleanup } from "@testing-library/react"
 import * as reactRedux from "../../redux/hooks/useRedux"

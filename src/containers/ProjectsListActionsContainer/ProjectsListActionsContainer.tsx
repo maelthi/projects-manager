@@ -2,13 +2,13 @@ import { Button } from "../../components/Button/Button"
 import { Filter } from "../../components/Filter/Filter"
 import { SearchBar } from "../../components/SearchBar/SearchBar"
 
-type ProjectsListActionsButtonsContainer = {
+type ProjectsListActionsContainer = {
   onHandleAddProjectButtonClick: () => void
 }
 
-export const ProjectsListActionsButtonsContainer = ({
+export const ProjectsListActionsContainer = ({
   onHandleAddProjectButtonClick,
-}: ProjectsListActionsButtonsContainer) => {
+}: ProjectsListActionsContainer) => {
   return (
     <section className="flex justify-between items-center">
       <Button

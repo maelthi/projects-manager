@@ -2,7 +2,7 @@ import { useState } from "react"
 import { Heading } from "../../components/Heading/Heading"
 import { AddProjectContainer } from "../../containers/AddProjectContainer/AddProjectContainer"
 import { ProjectsTableContainer } from "../../containers/ProjectsTableContainer/ProjectsTableContainer"
-import { ProjectsListActionsButtonsContainer } from "../../containers/ProjectsListActionsButtonsContainer/ProjectsListActionsButtonsContainer"
+import { ProjectsListActionsContainer } from "../../containers/ProjectsListActionsContainer/ProjectsListActionsContainer"
 
 export const Projects = () => {
   const [showAddProjectModal, setShowAddProjectModal] = useState(false)
@@ -10,7 +10,7 @@ export const Projects = () => {
   return (
     <section>
       <Heading label="Projects" />
-      <ProjectsListActionsButtonsContainer
+      <ProjectsListActionsContainer
         onHandleAddProjectButtonClick={handleAddProjectButtonClick}
       />
       {showAddProjectModal ? (

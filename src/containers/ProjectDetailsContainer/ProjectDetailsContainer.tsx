@@ -25,19 +25,12 @@ export const ProjectDetailsContainer = ({
           name="etapes"
           id="etapes"
           onChange={handleFilterChange}
+          key={etape}
+          defaultValue={etape}
         >
-          <option
-            selected={etape === ETAPE.EN_ATTENTE}
-            value={ETAPE.EN_ATTENTE}
-          >
-            {ETAPE.EN_ATTENTE}
-          </option>
-          <option selected={etape === ETAPE.EN_COURS} value={ETAPE.EN_COURS}>
-            {ETAPE.EN_COURS}
-          </option>
-          <option selected={etape === ETAPE.TERMINE} value={ETAPE.TERMINE}>
-            {ETAPE.TERMINE}
-          </option>
+          <option value={ETAPE.EN_ATTENTE}>{ETAPE.EN_ATTENTE}</option>
+          <option value={ETAPE.EN_COURS}>{ETAPE.EN_COURS}</option>
+          <option value={ETAPE.TERMINE}>{ETAPE.TERMINE}</option>
         </select>
       </div>
       <h3 className="mt-10 text-xl font-semibold">Commentaires</h3>
