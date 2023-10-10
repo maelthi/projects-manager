@@ -1,4 +1,5 @@
 import { ETAPE } from "../../constants/project"
+import { getEtapeColorClass } from "../../helpers/helpers"
 import { usePatchProjectById } from "../../hooks/usePatchProject"
 
 export const ProjectDetailsContainer = ({
@@ -18,7 +19,9 @@ export const ProjectDetailsContainer = ({
       <div className="flex justify-between">
         <p className="text-1xl py-1 w-2/3">{description}</p>
         <select
-          className="rounded-md bg-red-50 px-2 py-1 text-base font-medium text-red-700 ring-1 ring-inset ring-red-600/10"
+          className={`rounded-md bg-red-50 px-2 py-1 text-base font-medium ${getEtapeColorClass(
+            etape
+          )}`}
           name="etapes"
           id="etapes"
           onChange={handleFilterChange}
