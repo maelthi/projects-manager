@@ -20,7 +20,7 @@ describe("ProjectTableContainer", () => {
         id: 2,
         nom: " projet 2",
         description: "description 2",
-        etape: "En cours",
+        etape: ETAPE.EN_COURS,
       },
     ],
     isLoading: false,
