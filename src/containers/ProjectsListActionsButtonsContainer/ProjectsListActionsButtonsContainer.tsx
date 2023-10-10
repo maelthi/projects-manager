@@ -1,5 +1,6 @@
 import { Button } from "../../components/Button/Button"
 import { Filter } from "../../components/Filter/Filter"
+import { SearchBar } from "../../components/SearchBar/SearchBar"
 
 type ProjectsListActionsButtonsContainer = {
   onHandleAddProjectButtonClick: () => void
@@ -16,6 +17,7 @@ export const ProjectsListActionsButtonsContainer = ({
         onClick={onHandleAddProjectButtonClick}
         dataTestId="add-project-button"
       />
+      <SearchBar />
       <Filter />
     </section>
   )

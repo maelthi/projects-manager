@@ -1,4 +1,4 @@
-import { Table } from "../../components/Table/Table"
+import Table from "../../components/Table/Table"
 import { useGetProjectsByEtape } from "../../hooks/useGetProjects"
 
 import arrow from "../../assets/arrow.svg"
@@ -8,10 +8,16 @@ import { useDeleteProjectById } from "../../hooks/useDeleteProject"
 import { useAppSelector } from "../../redux/hooks/useRedux"
 
 export const ProjectsTableContainer = () => {
-  const filter = useAppSelector(({ filter }) => filter.filter)
+  const { filter, query } = useAppSelector(({ filter }) => filter)
   const { data: projectsList, refetch: refetchProjects } =
-    useGetProjectsByEtape(filter)
-  const headers = ["Titre du projet", "Description", "Etape"]
+    useGetProjectsByEtape(filter, query)
+  const headers = [
+    "Titre du projet",
+    "Description",
+    "Etape",
+    "Action",
+    "Project details",
+  ]
   const navigate = useNavigate()
 
   const { mutate } = useDeleteProjectById()
