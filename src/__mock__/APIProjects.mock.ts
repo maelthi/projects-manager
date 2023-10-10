@@ -1,3 +1,5 @@
+import { ETAPE } from "../constants/project"
+
 export const APIProjectsMock: APIProject[] = [
   {
     id: 1,

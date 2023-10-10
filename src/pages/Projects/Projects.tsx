@@ -1,8 +1,8 @@
 import { useState } from "react"
-import { Button } from "../../components/Button/Button"
 import { Heading } from "../../components/Heading/Heading"
 import { AddProjectContainer } from "../../containers/AddProjectContainer/AddProjectContainer"
 import { ProjectsTableContainer } from "../../containers/ProjectsTableContainer/ProjectsTableContainer"
+import { ProjectsListActionsButtonsContainer } from "../../containers/ProjectsListActionsButtonsContainer/ProjectsListActionsButtonsContainer"
 
 export const Projects = () => {
   const [showAddProjectModal, setShowAddProjectModal] = useState(false)
@@ -10,10 +10,8 @@ export const Projects = () => {
   return (
     <section>
       <Heading label="Projects" />
-      <Button
-        className="bg-blue-500"
-        label="Add project"
-        onClick={handleAddProjectButtonClick}
+      <ProjectsListActionsButtonsContainer
+        onHandleAddProjectButtonClick={handleAddProjectButtonClick}
       />
       {showAddProjectModal ? (
         <AddProjectContainer

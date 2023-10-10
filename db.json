@@ -6,6 +6,24 @@
       "description": "description 2",
       "commentaire": " ceci est un commentaire 2 de test",
       "etape": "En cours"
+    },
+    {
+      "nom": "Stereo",
+      "description": "Super project",
+      "etape": "Termine",
+      "id": 3
+    },
+    {
+      "nom": "New project",
+      "description": "A description of the project",
+      "etape": "En attente",
+      "id": 4
+    },
+    {
+      "nom": "Super project",
+      "description": "",
+      "etape": "En cours",
+      "id": 5
     }
   ]
 }
