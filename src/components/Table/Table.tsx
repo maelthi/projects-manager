@@ -1,12 +1,14 @@
 import { TableBody } from "../TableBody/TableBody"
 import { TableHeader } from "../TableHeader/TableHeader"
 
+import { memo } from "react"
+
 type Table = {
   headers: string[]
   rows: Row[]
 }
 
-export const Table = ({ headers, rows }: Table) => {
+const Table = ({ headers, rows }: Table) => {
   return (
     <section className="flex flex-col">
       <table className="min-w-full">
@@ -16,3 +18,5 @@ export const Table = ({ headers, rows }: Table) => {
     </section>
   )
 }
+
+export default memo(Table)
